@@ -57,7 +57,7 @@
             yesSize += 1;
             yesButton.style.fontSize = yesSize + "rem";
             yesButton.style.padding = (yesSize * 5) + "px";
-            if (yesSize > 5) {
+            if (yesButton.offsetWidth >= window.innerWidth / 2) {
                 noButton.style.display = "none";
             }
         }
