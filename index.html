@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Be My Valentine?</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+            background-color: pink;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        h1 {
+            font-size: 2.5rem;
+            color: red;
+        }
+        .buttons {
+            position: relative;
+            margin-top: 20px;
+        }
+        button {
+            font-size: 1.5rem;
+            padding: 10px 20px;
+            margin: 10px;
+            border: none;
+            cursor: pointer;
+            transition: 0.3s;
+            border-radius: 10px;
+        }
+        #yes {
+            background-color: lightgreen;
+        }
+        #no {
+            background-color: lightcoral;
+        }
+    </style>
+</head>
+<body>
+    <h1>Will you be my Valentine? ❤️</h1>
+    <div class="buttons">
+        <button id="yes" onclick="accept()">Yes</button>
+        <button id="no" onclick="increaseYesSize()">No</button>
+    </div>
+
+    <script>
+        let yesButton = document.getElementById("yes");
+        let noButton = document.getElementById("no");
+        let yesSize = 1.5;
+
+        function increaseYesSize() {
+            yesSize += 1;
+            yesButton.style.fontSize = yesSize + "rem";
+            yesButton.style.padding = (yesSize * 5) + "px";
+            if (yesSize > 5) {
+                noButton.style.display = "none";
+            }
+        }
+
+        function accept() {
+            document.body.innerHTML = "<h1>Yay! 🥰 See you on Valentine's Day! ❤️</h1>";
+        }
+    </script>
+</body>
+</html>
